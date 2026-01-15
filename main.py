@@ -9,8 +9,8 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
     raise RuntimeError("OPENAI_API_KEY is not set")
 
-ALLOWED_MODELS = set(os.getenv("ALLOWED_MODELS", "gpt-4.1-mini").split(","))
-WORKSHOP_CODE = os.getenv("WORKSHOP_CODE", "")  # optional shared code
+ALLOWED_MODELS = set(os.getenv("ALLOWED_MODELS").split(","))
+WORKSHOP_CODE = os.getenv("WORKSHOP_CODE")  # optional shared code
 MAX_CHARS = int(os.getenv("MAX_CHARS", "12000"))
 
 # Binder origins vary; start permissive and rely on rate limits + optional code.
